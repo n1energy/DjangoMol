@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import howru
+from django.urls import include
+#from .views import howru
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('feed/', howru),
+    path('feed/', include('feed.urls')),
 ]
