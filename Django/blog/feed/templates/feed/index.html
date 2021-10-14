@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'feed/base_feed.html' %}
+
+{% block title%}
+    Name of girlzzz
+{% endblock %}
+{% block body %}
+<h1 class = 'mb-5'>
+ Names:
+</h1>
+    {% for name in names %}
+        <p>
+        {{ name }}
+        </p>
+    {% endfor %}
+{% endblock %}        
