@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from .models import Post
 
 def posts_list(request):
-    n = ['masha','olya','elena']
-    return render(request,'feed/index.html', context = {'names' : n })
+    posts = Post.objects.all()
+    return render(request,'feed/index.html', context = {'posts' : posts })
 # Create your views here.
