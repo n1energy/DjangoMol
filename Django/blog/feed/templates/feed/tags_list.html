@@ -1,0 +1,13 @@
+{% extends 'feed/base_feed.html' %}
+
+{% block title%}
+    Tags title - {{block.super}}
+{% endblock %}
+{% block body %}
+<h1>Tags:</h1>
+{% for tag in tags %}
+<h3 class="mt-5">
+    {{tags.title}}
+</h3>
+{% endfor %}
+{% endblock %}        
