@@ -1,0 +1,24 @@
+{% extends 'feed/base_feed.html' %}
+
+{% block title %}
+    Post create
+{% endblock %}
+
+{% block body %}
+<form action="{% url 'post_create_url' %}" class="" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="form-group">
+        {% if field.errors %}
+        <div class="alert alert danger">
+            {{ field.errors }}
+        </div>
+        {% endif %}
+        {{ field.label }}
+        {{ field }}
+    </div>
+    {% endfor %}
+    <button type="submit" name="">Create post</button>
+
+{% endblock %}
+</form>

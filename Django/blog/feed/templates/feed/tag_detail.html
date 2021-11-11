@@ -1,0 +1,10 @@
+{% extends 'feed/base_feed.html' %}
+{% block title%}
+{{tag.title}} - {{block.super}}
+{% endblock %}
+{% block body %}
+<h1 class="mt-5">Post with {{ tag.title| title }} tag:</h1>
+{% for tag in tags %}
+    {% include 'feed/includes/post_card_template.html' %}
+{% endfor %}
+{% endblock %}        

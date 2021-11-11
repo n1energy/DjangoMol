@@ -17,3 +17,6 @@ class Post(models.Model):
 class Tag(models.Model):
     title = models.CharField(max_length = 50)
     slug = models.SlugField(max_length = 150, unique = True)
+
+    def get_absolute_url(self):
+        return reverse('tags_detail_url', kwargs = {'slug':self.slug})
